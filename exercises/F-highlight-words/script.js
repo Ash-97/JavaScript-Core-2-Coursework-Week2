@@ -21,13 +21,15 @@ function highlightWords(paragraph, colours) {
     paragraphEl.appendChild(spanEl);
   }
 
-  paragraphEl.addEventListener("click", (e) => {
+  paragraphEl.addEventListener("click", updateColour);
+
+  function updateColour(e) {
     if (selectEl.value !== "none") {
       e.target.style.backgroundColor = selectEl.value;
     } else {
       e.target.style.backgroundColor = "initial";
     }
-  });
+  }
 
   // array.forEach((element) => {
   //   let spanEl = document.createElement("span");

@@ -13,12 +13,15 @@ function todoList(todos) {
 
   document.querySelectorAll(".todoList").forEach((item) => {
     item.addEventListener("click", () => {
-      if (item.style.textDecoration === "none") {
-        item.style.textDecoration = "line-through";
-      } else {
-        item.style.textDecoration = "none";
-      }
+      item.classList.toggle("crossed");
     });
+    // item.addEventListener("click", () => {
+    //   if (item.style.textDecoration === "none") {
+    //     item.style.textDecoration = "line-through";
+    //   } else {
+    //     item.style.textDecoration = "none";
+    //   }
+    // });
   });
 }
 

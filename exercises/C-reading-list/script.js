@@ -13,6 +13,7 @@ function readingList(books) {
     let listEl = document.createElement("li");
     let paragraphEl = document.createElement("p");
     let imageEl = document.createElement("img");
+    imageEl.src = element.imageUrl;
 
     unorderedList.appendChild(listEl);
     listEl.appendChild(paragraphEl);
@@ -24,16 +25,6 @@ function readingList(books) {
     listEl.style.padding = "10px";
     listEl.style.minWidth = "350px";
 
-    if (element.title === "The Design of Everyday Things") {
-      imageEl.src =
-        "https://images-na.ssl-images-amazon.com/images/I/410RTQezHYL._SX326_BO1,204,203,200_.jpg";
-    } else if (element.title === "The Most Human Human") {
-      imageEl.src =
-        "https://images-na.ssl-images-amazon.com/images/I/71HMyqG6MRL.jpg";
-    } else if (element.title === "The Pragmatic Programmer") {
-      imageEl.src =
-        "https://images-na.ssl-images-amazon.com/images/I/41as+WafrFL.jpg";
-    }
     if (element.alreadyRead) {
       return (listEl.style.backgroundColor = "green");
     } else {
@@ -47,16 +38,22 @@ const books = [
     title: "The Design of Everyday Things",
     author: "Don Norman",
     alreadyRead: false,
+    imageUrl:
+      "https://images-na.ssl-images-amazon.com/images/I/410RTQezHYL._SX326_BO1,204,203,200_.jpg",
   },
   {
     title: "The Most Human Human",
     author: "Brian Christian",
     alreadyRead: true,
+    imageUrl:
+      "https://images-na.ssl-images-amazon.com/images/I/71HMyqG6MRL.jpg",
   },
   {
     title: "The Pragmatic Programmer",
     author: "Andrew Hunt",
     alreadyRead: true,
+    imageUrl:
+      "https://images-na.ssl-images-amazon.com/images/I/41as+WafrFL.jpg",
   },
 ];
 
